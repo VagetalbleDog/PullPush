@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="PullPush，你的私人训练手账。用日历记录训练部位、动作、组数和重量，把每一次坚持记在这里。">
+  <meta name="theme-color" content="#F6F6F0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="PullPush">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>PullPush</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    html, body { margin: 0; background: #F6F6F0; }
+    #loading { position: fixed; inset: 0; display: grid; place-content: center; justify-items: center; color: #284D3B; gap: 20px; }
+    #loading img { width: 64px; height: 64px; border-radius: 18px; }
+    #loading p { margin: 0; font: 600 11px sans-serif; letter-spacing: 4px; }
+    #loading span { width: 30px; height: 2px; background: #A5B981; animation: breathe 1.4s ease-in-out infinite; }
+    @keyframes breathe { 50% { opacity: .25; transform: scaleX(.5); } }
+    @media (prefers-reduced-motion: reduce) { #loading span { animation: none; } }
+  </style>
+</head>
+<body>
+  <div id="loading" role="status" aria-label="正在打开 PullPush">
+    <img src="icons/Icon-192.png" alt="">
+    <p>PullPush</p>
+    <span></span>
+  </div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      document.getElementById('loading')?.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
